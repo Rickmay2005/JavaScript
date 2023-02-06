@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Metafora 2</title>
+  </head>
+  <body>
+
+ 
+    
+
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Autista</label>
+          <input type="text" class="form-control" id="soggetto" aria-describedby="emailHelp" placeholder="SOGGETTO protagonista" >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Destinazione</label>
+          <input type="text" class="form-control" id="obiettivo" placeholder="OBIETTIVO da raggiungere" >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Carburante</label>
+          <input type="text" class="form-control" id="motivazione" aria-describedby="emailHelp" placeholder="MOTIVAZIONE che spinge verso l'obiettivo" >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Luogo</label>
+          <input type="text" class="form-control" id="contesto" placeholder="CONTESTO in cui l'azione viene svolta" >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Strada</label>
+          <input type="text" class="form-control" id="comportamento" aria-describedby="emailHelp" placeholder="COMPORTAMENTO" >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Strada OK</label>
+          <input type="text" class="form-control" id="compAd" placeholder="COMPORTAMENTO ADEGUATO" >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Strada KO</label>
+          <input type="text" class="form-control" id="compId" aria-describedby="emailHelp" placeholder="COMPORTAMENTO INADEGUATO" >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Cespugli</label>
+          <input type="text" class="form-control" id="consNeg" placeholder="FEEDBACK" >
+          <div class="form-group">
+            <label for="exampleInputPassword1">Lupo</label>
+            <input type="text" class="form-control" id="lupo" placeholder="CONSEGUENZE NEGATIVE"  >
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Cestino</label>
+                <input type="text" class="form-control" id="cest" aria-describedby="emailHelp" placeholder="ATTACCAMENTI DA LASCIARE" >
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Distanza</label>
+                <input type="text" class="form-control" id="dist" aria-describedby="emailHelp" placeholder="Numero da 1 a 5" value="3" >
+              </div>
+      </form>
+        <div class="form-actions">
+                            <center>
+                                
+    <table border="1">
+        <tbody id="tbody"></tbody>
+    </table>
+                                <p>
+                                    <img class="imground" name="situa" id="immagine" src="1.gif">
+                                </p>
+                               
+                                <p>
+                                    <input type="button" value="INIZIO" name="BInizia" class="btn-primary" onclick="inizio()">
+                                </p>
+                                <p>
+                                    <input type="button" value="" name="BSx" onclick="botsx()" class="btn" id="botn">
+                                    <input type="button" value="" name="BDx" onclick="botdx()" class="btn" id="bots">
+                                </p>
+                            </center>
+                        </div>
+
+        <textarea id="myTextarea" rows="15" style="width:100%">
+
+        </textarea>
+  </body>
+
+  <script>
+            var soggetto;
+            var obiettivo;
+            var motivazione;
+            var contesto;
+            var comportamento;
+            var compAd;
+            var compId;
+            var consNeg;
+            var cestino;
+            var distanza;
+            var motivato=0;
+   /* var cont=1;
+    function storia(){
+        document.getElementById("myTextarea").value+="\n"+cont;
+        cont++;
+        document.getElementById("myTextarea").scrollTop=document.getElementById("myTextarea").scrollHeight;
+        document.getElementById("demo").innerHTML=x;
+    }*/
+
+    function popup(pagina){
+        window.open(pagina, '','width=560,height=390,left=500,top=100,resizable=yes,toolbar=no,scrollbars=no,status=no');
+    }
+
+    function inizio(){
+        motivato=1;
+        document.getElementById("botn").value="No";
+        document.getElementById("bots").value="Si";
+        soggetto=document.getElementById("soggetto").value;
+        obiettivo=document.getElementById("obiettivo").value;
+        motivazione=document.getElementById("motivazione").value;
+        contesto=document.getElementById("contesto").value;
+        comportamento=document.getElementById("comportamento").value;
+        compAd=document.getElementById("compAd").value;
+        compId=document.getElementById("compId").value;
+        consNeg=document.getElementById("consNeg").value;
+        distanza=document.getElementById("dist").value;
+        cestino=document.getElementById("cest").value;
+            if(soggetto=="")
+                soggetto="SOGGETTO";
+            if(obiettivo=="")
+                obiettivo="OBIETTIVO";
+            if(motivazione=="")
+                motivazione="MOTIVAZIONE";
+            if(contesto=="")
+                contesto="CONTESTO";
+            if(comportamento=="")
+                comportamento="COMPORTAMENTO";
+            if(compAd=="")
+                compAd="COMPORTAMENTO ADEGUATO";
+            if(compId=="")
+                compId="COMPORTAMENTO INADEGUATO";
+            if(consNeg=="")
+                consNeg="CONSEGUENZE NEGATIVE";
+            if(cestino=="")
+                cestino="ATTACCAMENTI DA LASCIARE"
+
+
+        document.getElementById("myTextarea").value+="Distanza iniziale dall'obiettivo: " +distanza+"\n";
+        document.getElementById("myTextarea").value+=soggetto+" vuoi raggiungere " +obiettivo+"?\n";
+        document.getElementById("myTextarea").scrollTop=document.getElementById("myTextarea").scrollHeight;
+    }
+
+    function botsx(){
+        let tbody = document.getElementById("tbody");
+        let tr = document.createElement("tr");//Creo elemento tr
+        let td = document.createElement("td");//Creo elemento td
+        let img=document.createElement("img");//Creo l'elemento img
+
+      if(motivato==1){
+      document.getElementById("myTextarea").value+="Mancando" +motivazione+" per raggiungere "+obiettivo+" ," +soggetto+" nel contesto" +contesto+" non raggiungerai l'obiettivo !";
+      document.getElementById("myTextarea").value+=soggetto+" vuoi raggiungere " +obiettivo+"?\n";
+      document.getElementById("myTextarea").scrollTop=document.getElementById("myTextarea").scrollHeight;
+      td = document.createElement("td");//Creo l'elemento td
+        img=document.createElement("img");//Creo l'elemento img
+        img.src="3.gif";//percorso dell'immagine
+        td.appendChild(img);//Collego l'elemento img all'elemento td
+        tr.appendChild(td);//Collego td a tr
+        tbody.appendChild(tr);//Collego tr a tbody
+  
+    }
+    else if(motivato==2){
+      document.getElementById("myTextarea").value+="ATTENZIONE"+soggetto+"la scelta"+compId+"ti allontana da"+obiettivo+"\n";
+      document.getElementById("myTextarea").value+=soggetto+"distanza attuale dall'obiettivo"+distanza+"\n";
+      document.getElementById("myTextarea").value+=soggetto+"  quale "+comportamento+" scegli ? \n";
+      td = document.createElement("td");//Creo l'elemento td
+        img=document.createElement("img");//Creo l'elemento img
+        img.src="3.gif";//percorso dell'immagine
+        td.appendChild(img);//Collego l'elemento img all'elemento td
+        tr.appendChild(td);//Collego td a tr
+        tbody.appendChild(tr);//Collego tr a tbody
+      if(distanza<6)
+        distanza++;
+      if(distanza==6){
+        document.getElementById("myTextarea").value+= ":-("+  soggetto+" ti sei allontanato troppo hai scelto la strada chiusa " +compId+" e ti sei scontrato con "+consNeg +". Dovevi lasciar andare" +cestino+" così da poterti avvicinare all'"+obiettivo;
+       popup("https://www.umanetexpo.net/expo2015Server/UECDL/U-ECDL/img/PaginaTopolinoTontolino.htm");
+      }
+    }
+  }
+
+    function botdx(){
+    let tbody = document.getElementById("tbody");
+    let tr = document.createElement("tr");//Creo elemento tr
+    let td = document.createElement("td");//Creo elemento td
+    let img=document.createElement("img");//Creo l'elemento img
+
+      if(motivato==1){
+      document.getElementById("botn").value="SCORRETTO";
+      document.getElementById("bots").value="CORRETTO";
+      motivato=2;
+
+      document.getElementById("myTextarea").value+=soggetto+"  quale "+comportamento+" scegli ? ";
+      document.getElementById("myTextarea").scrollTop=document.getElementById("myTextarea").scrollHeight;
+      td = document.createElement("td");//Creo l'elemento td
+        img=document.createElement("img");//Creo l'elemento img
+        img.src="2.gif";//percorso dell'immagine
+        td.appendChild(img);//Collego l'elemento img all'elemento td
+        tr.appendChild(td);//Collego td a tr
+        tbody.appendChild(tr);//Collego tr a tbody
+      }
+      else if(motivato==2){
+        document.getElementById("myTextarea").value+=  soggetto+"  la scelta"  +compAd+" ti avvicina a  "+obiettivo+  "continua cosi !\n"  ;
+        document.getElementById("myTextarea").value+=soggetto+"distanza attuale dall'obiettivo"+distanza+"\n";
+        document.getElementById("myTextarea").value+=soggetto+"  quale "+comportamento+" scegli ? \n";
+        document.getElementById("myTextarea").scrollTop=document.getElementById("myTextarea").scrollHeight;
+        td = document.createElement("td");//Creo l'elemento td
+        img=document.createElement("img");//Creo l'elemento img
+        img.src="2.gif";//percorso dell'immagine
+        td.appendChild(img);//Collego l'elemento img all'elemento td
+        tr.appendChild(td);//Collego td a tr
+        tbody.appendChild(tr);//Collego tr a tbody
+        if(distanza>0)
+          distanza--;
+        if(distanza==0)
+          popup("https://www.umanetexpo.net/expo2015Server/UECDL/U-ECDL/img/PaginaTopolinoVolpino.htm");
+    
+      }
+    }
+  </script>
+</html>
